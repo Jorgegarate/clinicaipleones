@@ -18,12 +18,14 @@ const obtenerPacientes = async (req, res) => {
 const obtenerPaciente = async (req, res) =>{
  const {id} =req.params;
  const paciente = await Paciente.findById(id);
+
+
  //No encotrado
 if(!paciente){
- return res.status(404).json({msg:'No encontrado'})
+ return res.status(404).json({msg:"No encontrado"});
 }
 
- if (paciente.medico._id.toString() !== req.medico._id.toString()) {
+ if (paciente.medico._id.toString()!== req.medico._id.toString()) {
    return res.json({msg: "accion no válida"});
  }
  // Quien creo el paciente puede solo verlo
@@ -31,12 +33,31 @@ if(!paciente){
    res.json(paciente);
  }
 };
-const actualizarPaciente = (req, res) =>{
+const actualizarPaciente = async (req, res) =>{
+   const {id} =req.params;
+   const paciente = await Paciente.findById(id);
+   //No encotrado
+  if(!paciente){
+   return res.status(404).json({msg:'No encontrado'})
+  }
+   if (paciente.medico._id.toString()!== req.medico._id.toString()) {
+     return res.json({msg: "accion no válida"});
+   }
+  //actualizar paciente
+  //Datos para cambiar fecha de registro
+  paciente.fecha = req.body.fecha;
+  try {
+   const pacienteActualizado = await paciente.save();
+   res.json(pacienteActualizado)
+  } catch (error) {
+   console.error
+   
+  }
+  };
 
-};
-const eliminarPaciente = (req, res) =>{
+const eliminarPaciente = async (req, res) =>{
 
-};
+  };
 export {
    agregarPaciente,
    obtenerPacientes,
