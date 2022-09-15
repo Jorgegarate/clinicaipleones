@@ -1,5 +1,4 @@
 import Paciente from "../models/paciente.js";
-
 const agregarPaciente = async (req, res) => {
  const paciente = new Paciente(req.body);
  paciente.medico = req.medico._id;
@@ -11,9 +10,37 @@ const agregarPaciente = async (req, res) => {
  }
 
 };
-const obtenerPaciente = async (req, res) => {
+const obtenerPacientes = async (req, res) => {
    const pacientes = await Paciente.find().where('medico').equals(req.medico);
    res.json(pacientes);
 
 };
-export  {agregarPaciente, obtenerPaciente};
+const obtenerPaciente = async (req, res) =>{
+ const {id} =req.params;
+ const paciente = await Paciente.findById(id);
+ //No encotrado
+if(!paciente){
+ return res.status(404).json({msg:'No encontrado'})
+}
+
+ if (paciente.medico._id.toString() !== req.medico._id.toString()) {
+   return res.json({msg: "accion no válida"});
+ }
+ // Quien creo el paciente puede solo verlo
+ if (paciente) {
+   res.json(paciente);
+ }
+};
+const actualizarPaciente = (req, res) =>{
+
+};
+const eliminarPaciente = (req, res) =>{
+
+};
+export {
+   agregarPaciente,
+   obtenerPacientes,
+   obtenerPaciente,
+   actualizarPaciente,
+   eliminarPaciente
+};
