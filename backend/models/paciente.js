@@ -4,6 +4,10 @@ const pacienteSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    rut: {
+        type:String,
+        required:true
+    },
     contacto: {
         type:String,
         required:true,

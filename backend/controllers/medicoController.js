@@ -1,19 +1,28 @@
 import Medico from "../models/Medico.js";
 import generarJWT from "../helpers/generarJWT.js";
 import generarId from "../helpers/generarId.js";
+import emailRegistro from "../helpers/emailRegistro.js";
 const registrar = async (req, res)=>{
-const {email} =req.body;
+const {email, nombre} =req.body;
     //PREVENIR USUARIOS REPLICADO
 
     const existeUsuario = await Medico.findOne({email})
     if (existeUsuario) {
-        const error = new Error('Usuario ya registrado');
-        return res.status(400).json({msg: error.message});
+        const error = new Error("Usuario ya registrado- desde backend");
+        return res.status(400).json({msg: error.message });
     }
     try {
         //guardar un Nuevo medico 
         const medico = new Medico(req.body);
         const medicoGuardado = await medico.save();
+
+        //Enviar el email
+        emailRegistro({
+            email,
+            nombre,
+            token: medicoGuardado.token
+        }); 
+
         res.json(medicoGuardado);
     } catch (error) {
         console.log(error)

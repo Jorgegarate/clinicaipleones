@@ -45,7 +45,11 @@ const actualizarPaciente = async (req, res) =>{
    }
   //actualizar paciente
   //Datos para cambiar fecha de registro
-  paciente.fecha = req.body.fecha;
+ paciente.nombre= req.body.nombre || paciente.nombre;
+ paciente.contacto= req.body.contacto || paciente.contacto;
+ paciente.fecha= req.body.fecha || paciente.fecha;
+ paciente.email= req.body.email || paciente.email;
+ paciente.sintomas= req.body.sintomas || paciente.sintomas;
   try {
    const pacienteActualizado = await paciente.save();
    res.json(pacienteActualizado)
@@ -57,6 +61,21 @@ const actualizarPaciente = async (req, res) =>{
 
 const eliminarPaciente = async (req, res) =>{
 
+   const {id} =req.params;
+   const paciente = await Paciente.findById(id);
+   //No encotrado
+  if(!paciente){
+   return res.status(404).json({msg:'No encontrado'})
+  }
+   if (paciente.medico._id.toString()!== req.medico._id.toString()) {
+     return res.json({msg: "accion no válida"});
+   }
+   try {
+      await paciente.deleteOne()
+      res.json({msg:'Paciente eliminado'});
+   } catch (error) {
+      
+   }
   };
 export {
    agregarPaciente,
