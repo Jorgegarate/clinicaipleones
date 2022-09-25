@@ -36,7 +36,7 @@ const olvidePassword = () => {
           </div>
           {msg && <Alerta alerta= {alerta}/>}
           <div className="flex flex-col border my-4">
-            <input type="submit"  value="Iniciar Sesión" className="bg-indigo-700 font-semibold py-3 text-white hover:cursor-pointer hover:bg-indigo-800" />
+            <input type="submit"  value="Solicitar" className="bg-indigo-700 font-semibold py-3 text-white hover:cursor-pointer hover:bg-indigo-800" />
           </div>
           
         </form>
