@@ -2,6 +2,7 @@ import Medico from "../models/Medico.js";
 import generarJWT from "../helpers/generarJWT.js";
 import generarId from "../helpers/generarId.js";
 import emailRegistro from "../helpers/emailRegistro.js";
+import emailOlvidePassword from "../helpers/emailOlvidePassword.js"
 const registrar = async (req, res)=>{
 const {email, nombre} =req.body;
     //PREVENIR USUARIOS REPLICADO
@@ -21,8 +22,7 @@ const {email, nombre} =req.body;
             email,
             nombre,
             token: medicoGuardado.token
-        }); 
-
+        })
         res.json(medicoGuardado);
     } catch (error) {
         console.log(error)
@@ -47,6 +47,7 @@ const confirmar = async (req, res) => {
         usuarioConfirmado.confirmado =true;
         await usuarioConfirmado.save()
         console.log(usuarioConfirmado)
+        //solucion por ahora
         res.json({msg:"Confirmo correctamente su cuenta.."});
     } catch (error) {
         console.log(error)
@@ -85,7 +86,14 @@ const olvidePassword = async (req, res) => {
  }
  try {
     existeMedico.token = generarId()
-    await existeMedico.save()
+    await existeMedico.save();
+    //Enviar Email con instrucciones
+    emailOlvidePassword ({
+        email, 
+        nombre: existeMedico.nombre,
+        token: existeMedico.token,
+    });
+
     res.json({msg:'hemos enviado un mensaje con las instrucciones'});
     
  } catch (error) {
