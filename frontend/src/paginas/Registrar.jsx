@@ -50,15 +50,15 @@ const registrar = () => {
                     </div>
                     <div className="flex flex-col border my-4">
                       <label htmlFor="">Email</label>
-                      <input type="email"  placeholder="Email" alue={email} onChange={e => setEmail(e.target.value)} />
+                      <input type="email"  placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     <div className="flex flex-col border my-4">
                       <label htmlFor="">Password</label>
-                      <input type="password"  placeholder="Password" alue={password} onChange={e => setPassword(e.target.value)} />
+                      <input type="password"  placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
                     <div className="flex flex-col border my-4">
                       <label htmlFor="">Password</label>
-                      <input type="password"  placeholder="Repite tu Password" alue={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
+                      <input type="password"  placeholder="Repite tu Password" value={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
                     </div>
                     
                     <div className="py-3">
