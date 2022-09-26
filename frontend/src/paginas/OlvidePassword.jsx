@@ -42,7 +42,7 @@ const olvidePassword = () => {
         </form>
         <div className='flex-auto gap-4'>
           <Link className="flex-none w-14 h-14" to="/">¿Ya tienes una cuenta? Iniciar Sesión</Link>
-          <Link className="flex-none w-14 h-14" to="/olvidepassword">¿No tienes cuenta ?registrate</Link>
+          <Link className="flex-none w-14 h-14" to="/registrar">¿No tienes cuenta ?registrate</Link>
         </div>
        </div>
     </section>
