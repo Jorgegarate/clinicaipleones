@@ -31,7 +31,7 @@ const {email, nombre} =req.body;
 };
 const perfil = (req, res)=>{
     const {medico} = req
-    res.json({perfil: medico});
+    res.json({medico});
 };
 
 const confirmar = async (req, res) => {

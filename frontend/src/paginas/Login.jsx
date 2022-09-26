@@ -1,12 +1,15 @@
 import { useState } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import Alerta from '../components/Alerta';
 import useAuth from '../hooks/useAuth';
 import clienteAxios from '../config/axios';
+
 const logins = () => {
   const[email, setEmail]= useState('')
   const[password, setPassword]= useState('')
   const[alerta, setAlerta]= useState({})
+
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +24,7 @@ const logins = () => {
       //mi amigo localStorage ajajjajaa
       localStorage.setItem('token', data.token)
       console.log('hola',data)
+      navigate('/admin')
     } catch (error) {
       setAlerta ({
         msg:error.response.data.msg,
