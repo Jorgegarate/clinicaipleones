@@ -24,8 +24,7 @@ const Formulario = () => {
                 <div className="mb-5">
                     <label  className="text-gray-700 uppercase font-bold" htmlFor="alta">Fecha</label>
                     <input type="date" id="alta" placeholder="Solicitud" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "  />
-                    <input type="time" name="hora" value="11:45:00" max="22:30:00" min="10:00:00" step="1"></input>
-
+    
                 </div>
             </form>
         </>
