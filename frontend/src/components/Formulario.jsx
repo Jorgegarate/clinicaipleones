@@ -6,7 +6,6 @@ const Formulario = () => {
     const [emailContacto, setEmailContacto] = useState('')
     const [fecha, setFecha] = useState('')
     const [sintomas, setSintomas] = useState('')
-
     const [alerta, setAlerta ] =  useState({})
    
     return (
