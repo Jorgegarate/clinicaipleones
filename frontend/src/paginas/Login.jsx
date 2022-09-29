@@ -3,7 +3,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import Alerta from '../components/Alerta';
 import useAuth from '../hooks/useAuth';
 import clienteAxios from '../config/axios';
-//import App from './calendar';
+
 const logins = () => {
   const[email, setEmail]= useState('')
   const[password, setPassword]= useState('')
@@ -67,7 +67,6 @@ const logins = () => {
         <p><Link to="/olvidepassword">Olvidaste la contraseña</Link></p>
       </div>
     </section>
-    {/*<App />*/}
 
     </>
   )

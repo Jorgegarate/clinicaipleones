@@ -15,22 +15,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0",
-    "tailwindcss": "^3.1.8",
-    "@fullcalendar/core": "4.3.1",
-    "@fullcalendar/daygrid": "4.3.0",
-    "@fullcalendar/interaction": "4.3.0",
-    "@fullcalendar/react": "4.3.0",
-    "@fullcalendar/resource-timegrid": "4.3.0",
-    "@fullcalendar/resource-timeline": "4.3.0",
-    "@fullcalendar/timegrid": "4.3.0",
-    "fullcalendar": "3.10.1",
-    "moment": "2.24.0",
-    "node-sass": "4.13.0",
-    "react-big-calendar": "0.23.0",
-    "react-calendar": "2.19.2",
-    "react-scripts": "3.0.1",
-    "sass-loader": "8.0.0",
-    "webpack": "4.41.2"
+    "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
