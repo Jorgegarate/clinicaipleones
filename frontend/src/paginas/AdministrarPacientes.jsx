@@ -1,6 +1,10 @@
+import Main from '../components/Main'
 const AdministrarPacientes = () => {
     return (
-        <h1>Desde Administrar Paciente</h1>
+        <>
+        <Main/>
+        </>
+
     )
 }
 export default AdministrarPacientes;

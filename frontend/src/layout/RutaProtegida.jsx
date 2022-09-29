@@ -1,6 +1,6 @@
 import { Outlet, Navigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import Header from "../components/Header";
+import Dashboard from "../components/Dashboard";
 const RutaProtegida = () => {
     const {auth, cargando} = useAuth()
     console.log("a",auth)
@@ -9,8 +9,7 @@ const RutaProtegida = () => {
 
     return(
     <>
-    <Header/>
-    <h1>Este es el dashboard sss</h1>
+    <Dashboard/>
     {/*Si esta auth (token) muesta outlet sino entonces login 
     ?.id para no solo validar si es true si no el id correspondiente
     */

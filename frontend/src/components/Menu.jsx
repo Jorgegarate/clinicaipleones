@@ -1,10 +1,11 @@
 import React from 'react';
 
 const Menu = (props) => {
+    console.log("aaa",props)
     return(
     <>
-    <div className={props.className}> Navbar hola
-    </div>
+    <nav className={props.className}> Navbar hola
+    </nav>
     </>
     );
 }

@@ -54,3 +54,41 @@ h2 {
     height: 45px;
     padding: .5rem;
 }
+
+/*HEADER*/
+
+body {
+    background-color: #f0f3fb;
+}
+.navbar.active {
+    background-color: #fff !important;
+    box-shadow: 3px 0 10px 0 rgb(183 192 206 / 20%);
+}
+
+.sidebar {
+    transition: all 0.5s;
+    font-family: "Roboto", sans-serif;
+    background: #ffffff;
+    width: 260px;
+    overflow: hidden;
+    display: inline-block;
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    border-right: 1px solid #f2f4f9;
+    box-shadow: 0 8px 10px 0 rgb(183 192 206 / 20%);
+    z-index: 999 !important;
+}
+.side-closed.sidebar {
+    margin-left: -300px;
+    width: 60px;
+}
+.section {
+    margin: 35px 27px 0 35px;
+    min-height: calc(100vh - 76px);
+    transition: 0.5s;
+}
+.section.closed {
+    margin-left: 290px;
+}
