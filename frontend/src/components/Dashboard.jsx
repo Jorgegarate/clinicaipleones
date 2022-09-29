@@ -9,22 +9,22 @@ const Dashboard = () => {
     const {cerrarSesion} = useAuth()
     const [isSignUp, setSignUp] = useState(true);
     console.log("bbbbb", isSignUp)
+
     
     return (
         <>
-                <header  className="navbar active py-5">
+            <header  className="navbar active py-5 sticky top-0">
             
-            <div className=" container header mx-auto flex justify-between items-center">
+            <div className=" container-new header mx-auto flex justify-between items-center ">
                 <div className="logo flex justify-between items-center">
                 <img src={`${Logo}`} className="img" />
                 <h1 className={isSignUp ? "logito" : "logo-none"}>Clinica-IP</h1>
                 <button className="flex justify-between" onClick={() =>isSignUp? setSignUp(false): setSignUp(true)}>
                 <ion-icon size="large" name="menu-outline"></ion-icon>
-                
                 </button>
                 </div>
 
-                <nav className="flex gap-4">
+                <nav className="flex gap-4 sticky">
                     <Link to="/admin">Paciente</Link>
                     <Link to="/admin">Perfil</Link>
                     <button type="button" onClick={cerrarSesion}>cerrar sesión</button>

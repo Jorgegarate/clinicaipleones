@@ -106,7 +106,7 @@ ion-icon {
   }
 
 .logito {
-    margin-right: 20px;
+    margin-right: 100px;
     display: inline;
 }
 .logo-none {
@@ -115,4 +115,15 @@ ion-icon {
 }
 .sidebar {
     padding: 30px;
+}
+.undefined {
+    display: none;
+}
+.container-new {
+    margin: 0 50px;
+}
+
+.margin-new {
+    margin-top: 2px;
+    padding-left: 4px;
 }
