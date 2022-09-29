@@ -3,9 +3,7 @@ import useAuth from "../hooks/useAuth";
 import Dashboard from "../components/Dashboard";
 const RutaProtegida = () => {
     const {auth, cargando} = useAuth()
-    console.log("a",auth)
-    console.log("b",cargando)
-    if(cargando) return'cargando...'
+    if(cargando) return 'cargando...'
 
     return(
     <>
@@ -16,7 +14,7 @@ const RutaProtegida = () => {
     }
     {/*Verificar en el controllers si tiene un objeto o la forma de ingresar es distinta 
     IMPORTANTE DEJAR TODO JUNTO SOLUCION DE RECARGA Y NO CAMBIO DE RUTA*/}
-    {auth.medico?._id ?<Outlet/>:<Navigate to="/"/>} 
+    {auth?._id ?<Outlet/>:<Navigate to="/"/>} 
     </>
     )
 };

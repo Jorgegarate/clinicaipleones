@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import useAuth from "../hooks/useAuth";
 import Menu from './Menu';
 import Main from "./Main";
+import Logo from "../img/bg-01.png"
 const Dashboard = () => {
 
+    const {cerrarSesion} = useAuth()
     const [isSignUp, setSignUp] = useState(true);
     console.log("bbbbb", isSignUp)
     
@@ -11,14 +14,20 @@ const Dashboard = () => {
         <>
                 <header  className="navbar active py-5">
             
-            <div className="container mx-auto flex justify-between items-center ">
-                <button onClick={() =>isSignUp? setSignUp(false): setSignUp(true)}>
-                <img src="../img/reorder-three-outline.svg" alt="" />
+            <div className=" container header mx-auto flex justify-between items-center">
+                <div className="logo flex justify-between items-center">
+                <img src={`${Logo}`} className="img" />
+                <h1 className={isSignUp ? "logito" : "logo-none"}>Clinica-IP</h1>
+                <button className="flex justify-between" onClick={() =>isSignUp? setSignUp(false): setSignUp(true)}>
+                <ion-icon size="large" name="menu-outline"></ion-icon>
+                
                 </button>
+                </div>
+
                 <nav className="flex gap-4">
                     <Link to="/admin">Paciente</Link>
                     <Link to="/admin">Perfil</Link>
-                    <button>cerrar sesión</button>
+                    <button type="button" onClick={cerrarSesion}>cerrar sesión</button>
                 </nav>
             </div>
             

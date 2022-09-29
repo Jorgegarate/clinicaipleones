@@ -31,13 +31,19 @@ const AuthProvider = ({children}) => {
        }
        autenticarUsuario()
     }, [])
+    const cerrarSesion = () => {
+        localStorage.removeItem('token')
+        setAuth({})
+
+    }
     return (
         //desde este lugar toman todos los datos
         <AuthContext.Provider 
         value={{
             auth,
             setAuth,
-            cargando
+            cargando,
+            cerrarSesion
         }}>
             {children}
         </AuthContext.Provider>

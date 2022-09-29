@@ -8,6 +8,7 @@ const logins = () => {
   const[email, setEmail]= useState('')
   const[password, setPassword]= useState('')
   const[alerta, setAlerta]= useState({})
+  const {setAuth} = useAuth()
 
   const navigate = useNavigate()
 
@@ -23,7 +24,8 @@ const logins = () => {
       const {data} = await clienteAxios.post('MEDICOS/login', {email, password})
       //mi amigo localStorage ajajjajaa
       localStorage.setItem('token', data.token)
-      console.log('hola',data)
+      setAuth(data)
+      console.log("erfewtfwjg", data)
       navigate('/admin')
     } catch (error) {
       setAlerta ({
