@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Formulario from './Formulario';
-import ListadoPaciente from './ListadoPaciente';
+import ListadoPacientes from './ListadoPacientes';
 
 
 const Main = (props) => {
@@ -25,7 +25,7 @@ const Main = (props) => {
     <Formulario/>
     </div>
     <div className='md:w-1/2 lg:w-2/5'>
-    <ListadoPaciente/>
+    <ListadoPacientes/>
     </div>
     </div>
 

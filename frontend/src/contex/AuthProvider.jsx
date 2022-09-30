@@ -21,7 +21,7 @@ const AuthProvider = ({children}) => {
                 }
             }
             try {
-                const {data} = await clienteAxios('/MEDICOS/perfil', config)
+                const {data} = await clienteAxios.get('/MEDICOS/perfil', config)
                 setAuth(data)
             } catch (error) {
                 console.log(error.response.data.msg)

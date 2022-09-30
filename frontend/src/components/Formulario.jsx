@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Alerta from "./Alerta"
+import usePacientes from '../hooks/usePacientes'
 const Formulario = () => {
     const [nombre, setNombre] = useState('')
     const [contacto, setContacto] = useState('')
@@ -8,16 +9,20 @@ const Formulario = () => {
     const [fecha, setFecha] = useState('')
     const [sintomas, setSintomas] = useState('')
     const [alerta, setAlerta ] =  useState({})
+    const {guardarPaciente} = usePacientes()
     const handleSubmit = e => {
         e.preventDefault()
         //validar el formulario
-        if ([nombre, contacto, email, emailContacto, fecha, sintomas, alerta].includes('')) {
+        if ([nombre, contacto, email, emailContacto, fecha, sintomas].includes('')) {
             setAlerta({
                 msg:'Todos los campos son obligatorio',
                 error:true
             })
+            return;
 
         }
+        setAlerta({})
+        guardarPaciente({nombre, contacto, email, emailContacto, fecha, sintomas})
     }
     const {msg} =alerta
     return (
@@ -67,7 +72,7 @@ const Formulario = () => {
                     onChange={e => setFecha(e.target.value)}  />
     
                 </div>
-                <div className="mb-5">
+                {/*<div className="mb-5">
                     <label  className="text-gray-700 uppercase font-bold" htmlFor="alta">Hora</label>
                     <select className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
                         <option value="10:00">10:00</option>
@@ -76,7 +81,8 @@ const Formulario = () => {
                         <option value="13:00">13:00</option>
                     </select>
     
-                </div>
+                </div> */}
+                
                 <div className="mb-5">
                     <label  className="text-gray-700 uppercase font-bold" htmlFor="alta">Sintomas</label>
                     <textarea placeholder=" Describe los Sintomas" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "

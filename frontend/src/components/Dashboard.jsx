@@ -8,7 +8,6 @@ const Dashboard = () => {
 
     const {cerrarSesion} = useAuth()
     const [isSignUp, setSignUp] = useState(true);
-    console.log("bbbbb", isSignUp)
 
     
     return (
