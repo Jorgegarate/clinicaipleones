@@ -3,9 +3,10 @@ import Alerta from "./Alerta"
 import usePacientes from '../hooks/usePacientes'
 const Formulario = () => {
     const [nombre, setNombre] = useState('')
+    const [rut, setRut] = useState('')
     const [contacto, setContacto] = useState('')
     const [email, setEmail] = useState('')
-    const [emailContacto, setEmailContacto] = useState('')
+    const [emailcontacto, setEmailContacto] = useState('')
     const [fecha, setFecha] = useState('')
     const [sintomas, setSintomas] = useState('')
     const [alerta, setAlerta ] =  useState({})
@@ -13,7 +14,7 @@ const Formulario = () => {
     const handleSubmit = e => {
         e.preventDefault()
         //validar el formulario
-        if ([nombre, contacto, email, emailContacto, fecha, sintomas].includes('')) {
+        if ([nombre, rut, contacto, email, emailcontacto, fecha, sintomas].includes('')) {
             setAlerta({
                 msg:'Todos los campos son obligatorio',
                 error:true
@@ -22,7 +23,7 @@ const Formulario = () => {
 
         }
         setAlerta({})
-        guardarPaciente({nombre, contacto, email, emailContacto, fecha, sintomas})
+        guardarPaciente({nombre, contacto, rut, email, emailcontacto, fecha, sintomas})
     }
     const {msg} =alerta
     return (
@@ -40,6 +41,15 @@ const Formulario = () => {
                     id="nombre" placeholder="nombre" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
                     value={nombre} 
                     onChange={e => setNombre(e.target.value)}/>
+
+                </div>
+                <div className="mb-5">
+                    <label  className="text-gray-700 uppercase font-bold" htmlFor="rut">Rut</label>
+                    <input 
+                    type="number" 
+                    id="nombre" placeholder="nombre" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
+                    value={rut} 
+                    onChange={e => setRut(e.target.value)}/>
 
                 </div>
                 <div className="mb-5">
@@ -61,13 +71,13 @@ const Formulario = () => {
                 <div className="mb-5">
                     <label  className="text-gray-700 uppercase font-bold" htmlFor="emailcontacto">Email Emergencia</label>
                     <input type="emailcontacto" id="emailcontacto" placeholder="Email Emergencia" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
-                    value={emailContacto} 
+                    value={emailcontacto} 
                     onChange={e => setEmailContacto(e.target.value)}  />
 
                 </div>
                 <div className="mb-5">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="alta">Fecha</label>
-                    <input type="date" id="alta" placeholder="Solicitud" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
+                    <label  className="text-gray-700 uppercase font-bold" htmlFor="fecha">Fecha</label>
+                    <input type="date" id="fecha" placeholder="Solicitud" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
                     value={fecha} 
                     onChange={e => setFecha(e.target.value)}  />
     
