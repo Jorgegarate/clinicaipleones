@@ -40,11 +40,11 @@ const logins = () => {
     <>
     <section className="form-section">
       <div className="auth-wrapper">
-        <h2 className="font-semibold"> Welcome to Cliniva </h2>
+        <h2 className="font-semibold"> Bienvenido a Clinica (CMPG) </h2>
         <p>
-          <Link to="/registrar">No tienes Cuenta? Registrar</Link>
+          <Link to="/registrar">No tienes Cuenta? Registrate</Link>
         </p>
-        <h2 className="font-bold">Sign in</h2>
+        <h2 className="font-bold">Iniciar Sesión</h2>
         <form  className="flex flex-col" onSubmit={handleSubmit}>
 
           <div className="flex flex-col border my-4">
@@ -54,8 +54,8 @@ const logins = () => {
 
 
           <div className="flex flex-col border my-4">
-            <label htmlFor="">Password</label>
-            <input type="password"  placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+            <label htmlFor="">Contraseña</label>
+            <input type="password"  placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} />
           </div>
           <div>
             {/*alerta */}
@@ -66,7 +66,7 @@ const logins = () => {
           </div>
           
         </form>
-        <p><Link to="/olvidepassword">Olvidaste la contraseña</Link></p>
+        <p><Link to="/olvidepassword">Olvidaste la contraseña?</Link></p>
       </div>
     </section>
 

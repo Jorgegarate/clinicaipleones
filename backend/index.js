@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import cors from "cors";
+// import cors from "cors";
 import conectarDB from "./config/db.js";
 import medicoRoutes from "./routs/medicoRoutes.js";
 import pacienteRoutes from "./routs/pacienteRoutes.js";
@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 dotenv.config();
 
-conectarDB();
+/* conectarDB();
 //ruta del front-end
 const  dominiosPermitidos = [process.env.FRONTEND_URL]
 const corsOptions = {
@@ -24,7 +24,7 @@ const corsOptions = {
     }
     
 }
-app.use(cors(corsOptions));
+app.use(cors(corsOptions)); */
 
 app.use('/api/medicos', medicoRoutes);
 app.use('/api/paciente', pacienteRoutes);
