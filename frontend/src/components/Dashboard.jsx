@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from "../hooks/useAuth";
 import Menu from './Menu';
 import Main from "./Main";
-import Logo from "../img/bg-01.png"
+import Logo from "../img/logo.png"
 const Dashboard = () => {
 
     const {cerrarSesion} = useAuth()
@@ -16,8 +16,8 @@ const Dashboard = () => {
             
             <div className=" container-new header mx-auto flex justify-between items-center ">
                 <div className="logo flex justify-between items-center">
-                <img src={`${Logo}`} className="img" />
-                <h1 className={isSignUp ? "logito" : "logo-none"}>Clinica-IP</h1>
+                <img src={`${Logo}`} className="img " />
+                <h1 className={isSignUp ? "logito font-bold uppercase text-3xl color" : "logo-none"}>CPG</h1>
                 <button className="flex justify-between" onClick={() =>isSignUp? setSignUp(false): setSignUp(true)}>
                 <ion-icon size="large" name="menu-outline"></ion-icon>
                 </button>

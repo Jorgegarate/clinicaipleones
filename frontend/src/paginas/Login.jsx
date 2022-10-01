@@ -39,30 +39,30 @@ const logins = () => {
   return (
     <>
     <section className="form-section">
-      <div className="auth-wrapper">
-        <h2 className="font-semibold"> Welcome to Cliniva </h2>
+      <div className="auth-wrapper form-login">
+        <h2 className="font-semibold color-title"> Bienvenidos </h2>
         <p>
           <Link to="/registrar">No tienes Cuenta? Registrar</Link>
         </p>
-        <h2 className="font-bold">Sign in</h2>
+        <h2 className="font-bold">Iniciar sesión</h2>
         <form  className="flex flex-col" onSubmit={handleSubmit}>
 
           <div className="flex flex-col border my-4">
-            <label htmlFor="">Correo</label>
-            <input type="email"  placeholder="Correo" value={email} onChange={e => setEmail(e.target.value)}/>
+            <label className='label-not' htmlFor="">Correo</label>
+            <input className='input-not' type="email"  placeholder="Correo" value={email} onChange={e => setEmail(e.target.value)}/>
           </div>
 
 
           <div className="flex flex-col border my-4">
-            <label htmlFor="">Password</label>
-            <input type="password"  placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+            <label className="label-not" htmlFor="">Contraseña</label>
+            <input className='input-not' type="password"  placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} />
           </div>
           <div>
             {/*alerta */}
           {msg && <Alerta alerta= {alerta}/>} 
           </div>
           <div className="flex flex-col border my-4">
-            <input type="submit"  value="Iniciar Sesión" className="bg-indigo-700 font-semibold py-3 text-white hover:cursor-pointer hover:bg-indigo-800" />
+            <input type="submit"  value="Iniciar Sesión" className="color-blue-new font-semibold py-3 text-white hover:cursor-pointer hover:color-blue-hover" />
           </div>
           
         </form>

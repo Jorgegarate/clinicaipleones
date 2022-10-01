@@ -60,7 +60,7 @@ const Formulario = () => {
             </p>
             
             <form className="py-10 px-5 mb:10 lg:mb-0" onSubmit={handleSubmit}>
-                <div className="mb-5">
+                <div className="mb-5 ">
                     <label  className="text-gray-700 uppercase font-bold" htmlFor="usuario">Nombre</label>
                     <input 
                     type="text" 
