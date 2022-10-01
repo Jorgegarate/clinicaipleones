@@ -20,11 +20,11 @@ const Main = (props) => {
     </button>
     </div>
     <div className='flex flex-col md:flex-row'>
-    <div className={`${mostrarFormulario ? 'block' : 'hidden' } md:w-1/2 lg:w-2/5`}>
+    <div className={`${mostrarFormulario ? 'block' : 'hidden' } md:w-1/3 lg:w-2/5`}>
     
     <Formulario/>
     </div>
-    <div className='md:w-1/2 lg:w-2/5'>
+    <div className='md:w-2/3 lg:w-3/5'>
     <ListadoPacientes/>
     </div>
     </div>

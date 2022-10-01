@@ -100,9 +100,13 @@ const Formulario = () => {
                     onChange={e => setSintomas(e.target.value)}   />
     
                 </div>
+                <div className="my-5">
+                  {msg && <Alerta alerta={alerta}/> }
+                </div>
+                
                 <input className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 transition-colors cursor-pointer"  type="submit" value="agregar Paciente" />
             </form>
-            {msg && <Alerta alerta={alerta}/> }
+            
         </>
 
     )

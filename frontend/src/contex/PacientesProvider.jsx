@@ -3,7 +3,9 @@ import clienteAxios from '../config/axios';
 
 const PacientesContext = createContext()
 export const PacientesProvider = ({children}) => {
+
     const [pacientes, setPacientes ] =useState([])
+    
     useEffect(() => {
         const obtenerPacientes = async () => {
             try {
@@ -16,7 +18,8 @@ export const PacientesProvider = ({children}) => {
                     }
                 }
                 const {data} = await clienteAxios.get('/paciente', config)
-                setPacientes("datitos",data)
+                const {createdAt, updatedAt, __v, ...pacienteAlmacenado} =data
+                setPacientes([pacienteAlmacenado, ...pacientes])
             } catch (error) {
                 console.log(error)
             }
@@ -25,7 +28,6 @@ export const PacientesProvider = ({children}) => {
     }, [])
 
     const guardarPaciente = async (paciente) => {
-        console.log("nuevo",paciente)
         try {
             const token = localStorage.getItem('token')
             const config = {
@@ -35,9 +37,10 @@ export const PacientesProvider = ({children}) => {
                 }
             }
             const {data} = await clienteAxios.post('/paciente', paciente, config)
-                console.log("data", data)
+                const {createdAt, updatedAt, __v, ...pacienteAlmacenado }= data
+                setPacientes([pacienteAlmacenado, ...pacientes])
         } catch (error) {
-            console.log("error", error)
+            console.log( error.response.data.msg)
         }
     }
     return (
