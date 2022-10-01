@@ -17,8 +17,9 @@ export const PacientesProvider = ({children}) => {
                         Authorization: `Bearer ${token}`
                     }
                 }
-                const {data} = await clienteAxios.get('/paciente', config)
-                setPacientes= data
+                const {data} = await clienteAxios('/paciente', config);
+                console.log("info", data)
+                setPacientes(data)
             } catch (error) {
                 console.log(error)
             }
