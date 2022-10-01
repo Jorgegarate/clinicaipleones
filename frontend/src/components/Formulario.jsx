@@ -9,12 +9,20 @@ const Formulario = () => {
     const [emailcontacto, setEmailContacto] = useState('')
     const [fecha, setFecha] = useState('')
     const [sintomas, setSintomas] = useState('')
+    const [id, setId] = useState(null)
     const [alerta, setAlerta ] =  useState({})
     const {guardarPaciente, paciente} = usePacientes()
-    
     useEffect(() => {
         if(paciente?.nombre) {
-            setNombre(paciente.nombreg)
+            setNombre(paciente.nombre)
+            setRut(paciente.rut)
+            setContacto(paciente.contacto)
+            setFecha(new Date(paciente.fecha).toISOString())
+            setEmail(paciente.email)
+            setEmailContacto(paciente.emailcontacto)
+            setSintomas(paciente.sintomas)
+            setId(paciente._id)
+
         }
     },  [paciente])
     const handleSubmit = e => {
@@ -30,6 +38,18 @@ const Formulario = () => {
         }
         setAlerta({})
         guardarPaciente({nombre, contacto, rut, email, emailcontacto, fecha, sintomas})
+        setAlerta({
+            msg:'modificación realizada'
+        })
+        setNombre ('')
+        setRut ('')
+        setContacto ('')
+        setEmail ('')
+        setEmailContacto ('')
+        setFecha ('')
+        setSintomas ('')
+        setId ('')
+
     }
     const {msg} =alerta
     return (
@@ -110,7 +130,7 @@ const Formulario = () => {
                   {msg && <Alerta alerta={alerta}/> }
                 </div>
                 
-                <input className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 transition-colors cursor-pointer"  type="submit" value="agregar Paciente" />
+                <input className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 transition-colors cursor-pointer"  type="submit" value={id ? 'Guardar Cambios':"agregar Paciente"} />
             </form>
             
         </>
