@@ -10,7 +10,8 @@ const Formulario = () => {
     const [fecha, setFecha] = useState('')
     const [sintomas, setSintomas] = useState('')
     const [alerta, setAlerta ] =  useState({})
-    const {guardarPaciente} = usePacientes()
+    const {guardarPaciente, paciente} = usePacientes()
+    console.log("hhh", paciente)
     const handleSubmit = e => {
         e.preventDefault()
         //validar el formulario
