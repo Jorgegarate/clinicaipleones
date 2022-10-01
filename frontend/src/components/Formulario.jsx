@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Alerta from "./Alerta"
 import usePacientes from '../hooks/usePacientes'
 const Formulario = () => {
@@ -11,7 +11,12 @@ const Formulario = () => {
     const [sintomas, setSintomas] = useState('')
     const [alerta, setAlerta ] =  useState({})
     const {guardarPaciente, paciente} = usePacientes()
-    console.log("hhh", paciente)
+    
+    useEffect(() => {
+        if(paciente?.nombre) {
+            setNombre(paciente.nombreg)
+        }
+    },  [paciente])
     const handleSubmit = e => {
         e.preventDefault()
         //validar el formulario
