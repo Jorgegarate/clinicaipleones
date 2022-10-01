@@ -3,7 +3,7 @@ import Paciente from './Paciente';
 
 const ListadoPacientes = () => {
     const {pacientes} = usePacientes()
-    console.log("pacientes",pacientes.length)
+    console.log("pacientes", pacientes)
     return (
         <>{pacientes.length ?
             (

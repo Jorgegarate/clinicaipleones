@@ -18,8 +18,7 @@ export const PacientesProvider = ({children}) => {
                     }
                 }
                 const {data} = await clienteAxios.get('/paciente', config)
-                const {createdAt, updatedAt, __v, ...pacienteAlmacenado} =data
-                setPacientes([pacienteAlmacenado, ...pacientes])
+                setPacientes= data
             } catch (error) {
                 console.log(error)
             }
