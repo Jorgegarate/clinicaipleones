@@ -1,23 +1,29 @@
 import { useState } from "react"
 import Alerta from "./Alerta"
+import usePacientes from '../hooks/usePacientes'
 const Formulario = () => {
     const [nombre, setNombre] = useState('')
+    const [rut, setRut] = useState('')
     const [contacto, setContacto] = useState('')
     const [email, setEmail] = useState('')
-    const [emailContacto, setEmailContacto] = useState('')
+    const [emailcontacto, setEmailContacto] = useState('')
     const [fecha, setFecha] = useState('')
     const [sintomas, setSintomas] = useState('')
     const [alerta, setAlerta ] =  useState({})
+    const {guardarPaciente} = usePacientes()
     const handleSubmit = e => {
         e.preventDefault()
         //validar el formulario
-        if ([nombre, contacto, email, emailContacto, fecha, sintomas, alerta].includes('')) {
+        if ([nombre, rut, contacto, email, emailcontacto, fecha, sintomas].includes('')) {
             setAlerta({
                 msg:'Todos los campos son obligatorio',
                 error:true
             })
+            return;
 
         }
+        setAlerta({})
+        guardarPaciente({nombre, contacto, rut, email, emailcontacto, fecha, sintomas})
     }
     const {msg} =alerta
     return (
@@ -35,6 +41,15 @@ const Formulario = () => {
                     id="nombre" placeholder="nombre" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
                     value={nombre} 
                     onChange={e => setNombre(e.target.value)}/>
+
+                </div>
+                <div className="mb-5">
+                    <label  className="text-gray-700 uppercase font-bold" htmlFor="rut">Rut</label>
+                    <input 
+                    type="number" 
+                    id="nombre" placeholder="nombre" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
+                    value={rut} 
+                    onChange={e => setRut(e.target.value)}/>
 
                 </div>
                 <div className="mb-5">
@@ -56,18 +71,18 @@ const Formulario = () => {
                 <div className="mb-5">
                     <label  className="text-gray-700 uppercase font-bold" htmlFor="emailcontacto">Email Emergencia</label>
                     <input type="emailcontacto" id="emailcontacto" placeholder="Email Emergencia" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
-                    value={emailContacto} 
+                    value={emailcontacto} 
                     onChange={e => setEmailContacto(e.target.value)}  />
 
                 </div>
                 <div className="mb-5">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="alta">Fecha</label>
-                    <input type="date" id="alta" placeholder="Solicitud" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
+                    <label  className="text-gray-700 uppercase font-bold" htmlFor="fecha">Fecha</label>
+                    <input type="date" id="fecha" placeholder="Solicitud" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
                     value={fecha} 
                     onChange={e => setFecha(e.target.value)}  />
     
                 </div>
-                <div className="mb-5">
+                {/*<div className="mb-5">
                     <label  className="text-gray-700 uppercase font-bold" htmlFor="alta">Hora</label>
                     <select className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
                         <option value="10:00">10:00</option>
@@ -76,7 +91,8 @@ const Formulario = () => {
                         <option value="13:00">13:00</option>
                     </select>
     
-                </div>
+                </div> */}
+                
                 <div className="mb-5">
                     <label  className="text-gray-700 uppercase font-bold" htmlFor="alta">Sintomas</label>
                     <textarea placeholder=" Describe los Sintomas" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
@@ -84,9 +100,13 @@ const Formulario = () => {
                     onChange={e => setSintomas(e.target.value)}   />
     
                 </div>
+                <div className="my-5">
+                  {msg && <Alerta alerta={alerta}/> }
+                </div>
+                
                 <input className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 transition-colors cursor-pointer"  type="submit" value="agregar Paciente" />
             </form>
-            {msg && <Alerta alerta={alerta}/> }
+            
         </>
 
     )

@@ -15,11 +15,13 @@ import NuevoPassword from './paginas/NuevoPassword';
 import AdministrarPacientes from './paginas/AdministrarPacientes';
 
 import { AuthProvider } from './contex/AuthProvider';
+import { PacientesProvider } from './contex/PacientesProvider';
 function App() {
   return (
     <BrowserRouter>
         <AuthProvider>
-            <Routes>
+          <PacientesProvider>
+          <Routes>
               {/*Rutas publicas*/}
                 <Route path="/" element={<AuthLayout/>}>
                     <Route index element={<Login/>}/>
@@ -33,6 +35,7 @@ function App() {
                     <Route index element={<AdministrarPacientes/>}/>
                 </Route>
             </Routes>
+          </PacientesProvider>
         </AuthProvider>
     </BrowserRouter>
   )

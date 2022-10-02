@@ -9,6 +9,7 @@ const AuthProvider = ({children}) => {
     useEffect(() => {
        const  autenticarUsuario = async () => {
             const  token = localStorage.getItem('token')
+             console.log("token", token)
             if(!token) {
                 setCargando(false)
                 return
@@ -21,8 +22,9 @@ const AuthProvider = ({children}) => {
                 }
             }
             try {
-                const {data} = await clienteAxios('/MEDICOS/perfil', config)
+                const {data} = await clienteAxios.get('/MEDICOS/perfil', config)
                 setAuth(data)
+                console.log("nuevos datos", data)
             } catch (error) {
                 console.log(error.response.data.msg)
                 setAuth({})
