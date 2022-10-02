@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Menu from './Menu';
 import Main from "./Main";
 import Logo from "../img/logo.png"
+import Medico from "../img/medico.png"
 const Dashboard = () => {
 
     const nombre = localStorage.getItem('nombre')
@@ -23,17 +24,18 @@ const Dashboard = () => {
                 </button>
                 </div>
 
-                <nav className="color-title gap-4 hidden md:flex">
+                <nav className="color-title gap-4 hidden md:flex center-text">
                     <Link to="/admin">Paciente</Link>
                     <Link to="/admin">Perfil</Link>
-                    <li className="font-bold text-gray-700 list-none">Hola {`${nombre}`}!</li>
+                    <li className="flex items-center font-bold text-gray-700 list-none">Hola {`${nombre}`}!
+                    <img className="imgsimbolo" src={`${Medico}`} alt="" /></li>
                 </nav>
             </div>
             
         </header>
         
         <Menu className={isSignUp ? "sidebar" : "side-closed sidebar"}/>
-        <Main className={isSignUp ? "section closed" : "section"}/>
+        <Main className="section"/>
         </>
 
     )

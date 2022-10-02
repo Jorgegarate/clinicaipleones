@@ -20,7 +20,7 @@
     .fondo {
         height: 35vh;
         width: 100%;
-        background: linear-gradient(35deg, #10b3e0fc, #1e5cb9c0),url(../src/img/bg-fondo.jpg);
+        background: linear-gradient(5deg, #10b3e0fc, #1e5cb9c0),url(../src/img/bg-fondo.jpg);
         background-size: cover;
         display: flex;
         align-items: center;
@@ -176,4 +176,11 @@ ion-icon {
 }
 .azul-degrades{
     background-color:#017BFF;
+}
+.imgsimbolo {
+    height: 30px;
+    margin-left: 5px;
+}
+.center-text a{
+    margin: auto;
 }
