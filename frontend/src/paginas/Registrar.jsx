@@ -38,9 +38,9 @@ const registrar = () => {
   const {msg} = alerta
     return (
       <>
-        <section className="form-section">
-                <div className="auth-wrapper">
-                  <h2 className="font-semibold"> Crea tu cuenta y Administra tus Pacientes </h2>
+        <section className="form-section p-3">
+                <div className="auth-wrapper form-login">
+                  <h2 className="font-semibold color-title"> Crea tu cuenta y Administra tus Pacientes </h2>
                   
                   <form  className="flex flex-col" onSubmit={handleSumit}>
 
@@ -67,11 +67,11 @@ const registrar = () => {
                       
                     </div>
                     <div className="flex flex-col border my-4">
-                      <input type="submit"  value="Registrarse" className="bg-indigo-700 font-semibold py-3 text-white hover:cursor-pointer hover:bg-indigo-800" />
+                      <input type="submit"  value="Registrarse" className="color-blue-new font-semibold py-3 text-white hover:cursor-pointer hover:color-blue-hover" />
                     </div>
                     
                   </form>
-                  <p><Link to="/">Ya tienes Cuenta?</Link></p>
+                  <p className='text-center'><Link to="/">Ya tienes Cuenta?</Link></p>
                 </div>
         </section>
   

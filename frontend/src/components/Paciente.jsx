@@ -8,7 +8,7 @@ const Paciente = ({paciente}) => {
         return new Intl.DateTimeFormat('es-ES', {dataStyle: 'long'}).format(nuevaFecha)
     })
     return (
-        <div className="mx-5 my-10 bg-white shadow-sm px-5 py-10 rounded-xl">
+        <div className="my-10 bg-white shadow-sm px-5 py-10 rounded-xl">
             <p className="font-bold uppercase my-2">Nombre: {' '}
                 <span className="font-normal normal-case">
                     {nombre}

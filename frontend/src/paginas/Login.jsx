@@ -24,7 +24,10 @@ const logins = () => {
       const {data} = await clienteAxios.post('MEDICOS/login', {email, password})
       //mi amigo localStorage ajajjajaa
       localStorage.setItem('token', data.token)
+      const {nombre} = data
       setAuth(data)
+      localStorage.setItem('nombre', data.nombre)
+
       console.log("erfewtfwjg", data)
       navigate('/admin')
     } catch (error) {
@@ -38,7 +41,7 @@ const logins = () => {
   const {msg} = alerta
   return (
     <>
-    <section className="form-section">
+    <section className="form-section p-3">
       <div className="auth-wrapper form-login">
         <h2 className="font-semibold color-title"> Bienvenidos </h2>
         <p>
@@ -66,7 +69,7 @@ const logins = () => {
           </div>
           
         </form>
-        <p><Link to="/olvidepassword">Olvidaste la contraseña</Link></p>
+        <p className=''><Link to="/olvidepassword">Olvidaste la contraseña</Link></p>
       </div>
     </section>
 
