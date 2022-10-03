@@ -8,6 +8,7 @@ const Formulario = () => {
     const [email, setEmail] = useState('')
     const [emailcontacto, setEmailContacto] = useState('')
     const [fecha, setFecha] = useState('')
+    const [hora, setHora] = useState('')
     const [sintomas, setSintomas] = useState('')
     const [id, setId] = useState(null)
     const [alerta, setAlerta ] =  useState({})
@@ -18,6 +19,7 @@ const Formulario = () => {
             setRut(paciente.rut)
             setContacto(paciente.contacto)
             setFecha(new Date(paciente.fecha).toISOString())
+            setHora(paciente.hora)
             setEmail(paciente.email)
             setEmailContacto(paciente.emailcontacto)
             setSintomas(paciente.sintomas)
@@ -28,7 +30,7 @@ const Formulario = () => {
     const handleSubmit = e => {
         e.preventDefault()
         //validar el formulario
-        if ([nombre, rut, contacto, email, emailcontacto, fecha, sintomas].includes('')) {
+        if ([nombre, rut, contacto, email, emailcontacto, fecha,hora, sintomas].includes('')) {
             setAlerta({
                 msg:'Todos los campos son obligatorio',
                 error:true
@@ -37,7 +39,7 @@ const Formulario = () => {
 
         }
         setAlerta({})
-        guardarPaciente({nombre, contacto, rut, email, emailcontacto, fecha, sintomas})
+        guardarPaciente({nombre, contacto, rut, email, emailcontacto, fecha, hora, sintomas})
         setAlerta({
             msg:'modificación realizada'
         })
@@ -72,8 +74,8 @@ const Formulario = () => {
                 <div className="mb-5">
                     <label  className="color-title uppercase font-bold" htmlFor="rut">Rut</label>
                     <input 
-                    type="number" 
-                    id="nombre" placeholder="nombre" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
+                    type="string" 
+                    id="nombre" placeholder="Rut" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
                     value={rut} 
                     onChange={e => setRut(e.target.value)}/>
 
@@ -86,7 +88,7 @@ const Formulario = () => {
 
                 </div>
                 <div className="mb-5">
-                    <label  className="color-title uppercase font-bold" htmlFor="contacto">Contato Emergencia</label>
+                    <label  className="color-title uppercase font-bold" htmlFor="contacto">Contacto Emergencia</label>
                     <input 
                     type="text" 
                     id="contacto" placeholder="Nombre" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
@@ -108,16 +110,16 @@ const Formulario = () => {
                     onChange={e => setFecha(e.target.value)}  />
     
                 </div>
-                {/*<div className="mb-5">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="alta">Hora</label>
-                    <select className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
+                <div className="mb-5">
+                    <label  className="color-title uppercase font-bold" htmlFor="alta">Hora</label>
+                    <select className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" value={fecha} onChange={e => setHora(e.target.value)}>
                         <option value="10:00">10:00</option>
                         <option value="11:00">11:00</option>
-                        <option selected value="12:00">12:00</option>
+                        <option value="12:00">12:00</option>
                         <option value="13:00">13:00</option>
                     </select>
     
-                </div> */}
+                </div>
                 
                 <div className="mb-5">
                     <label  className="color-title uppercase font-bold" htmlFor="alta">Sintomas</label>
