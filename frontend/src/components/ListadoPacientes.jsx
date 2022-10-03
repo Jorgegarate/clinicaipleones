@@ -8,19 +8,24 @@ const ListadoPacientes = () => {
         <>{pacientes.length ?
             (
                 <>
-                <h2 className='font-bol text-3xl'>
+                <h2 className='font-bold text-3xl color-title'>
                     Tines un total de {`${pacientes.length}`} pacientes por atender
                 </h2>
                 <p className='text-xl mt-5 mb-10'>
                     Estas realizando un  {' '}
-                    <span className='text-indigo-500 font-bold'> buen trabajo</span>
+                    <span className='color-title font-bold'> buen trabajo</span>
                 </p>
+                <div className='grid lg:grid-cols-2 gap-4'>
                 {pacientes.map(paciente => (
-                <Paciente
+                
+                    <Paciente
                     key={paciente._id}
                     paciente={paciente}
-                />
+                    />
+        
+                
                 ))}
+                </div>
 
                 
                 </>

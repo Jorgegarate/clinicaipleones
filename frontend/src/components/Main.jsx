@@ -5,12 +5,19 @@ import ListadoPacientes from './ListadoPacientes';
 const Main = (props) => {
     const [mostrarFormulario, setMostrarFormulario] = useState(false)
     
-   
-            console.log("nuevo estadp",props)
-
-    
     return(
     <>
+        <div className={`${mostrarFormulario ? 'block sm:w-full modal-new' : 'hidden' } w-full `}>
+        <div className='modal' onClick={() => setMostrarFormulario(!mostrarFormulario)}></div>
+    <div className='modal-container'>
+        <div className='y'>
+            <button className='modal-close color-blue-new font-semibold py-3 text-white hover:cursor-pointer hover:color-blue-hover uppercase' onClick={() => setMostrarFormulario(!mostrarFormulario)}>x</button>
+        <Formulario/>
+        </div>
+
+    </div>
+
+    </div>
     <section className={`${props.className} md:section`}>
     <div className='flex flex-col md:flex-row justify-center md:justify-end items-center my-10'>
     <p className="py-5 md:py-0 text-lg text-center">
@@ -23,20 +30,10 @@ const Main = (props) => {
     
     </button>
     </div>
-    <div className={`${mostrarFormulario ? 'block sm:w-full modal-new' : 'hidden' } w-full `}>
-        <div className='modal' onClick={() => setMostrarFormulario(!mostrarFormulario)}></div>
-    <div className='modal-container'>
-        <div className='y'>
-            <button className='modal-close color-blue-new font-semibold py-3 text-white hover:cursor-pointer hover:color-blue-hover uppercase' onClick={() => setMostrarFormulario(!mostrarFormulario)}>x</button>
-        <Formulario/>
-        </div>
 
-    </div>
+    <div className=''>
 
-    </div>
-    <div className='flex flex-col md:flex-row-reverse '>
-
-    <div className={`${mostrarFormulario ? 'block w-full xl:w-1/2' : 'w-full' }`}>
+    <div className={`${mostrarFormulario ? 'block' : 'w-full' }`}>
     <ListadoPacientes/>
     </div>
     </div>
