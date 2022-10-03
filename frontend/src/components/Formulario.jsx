@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Alerta from "./Alerta"
 import usePacientes from '../hooks/usePacientes'
 const Formulario = () => {
@@ -9,8 +9,22 @@ const Formulario = () => {
     const [emailcontacto, setEmailContacto] = useState('')
     const [fecha, setFecha] = useState('')
     const [sintomas, setSintomas] = useState('')
+    const [id, setId] = useState(null)
     const [alerta, setAlerta ] =  useState({})
-    const {guardarPaciente} = usePacientes()
+    const {guardarPaciente, paciente} = usePacientes()
+    useEffect(() => {
+        if(paciente?.nombre) {
+            setNombre(paciente.nombre)
+            setRut(paciente.rut)
+            setContacto(paciente.contacto)
+            setFecha(new Date(paciente.fecha).toISOString())
+            setEmail(paciente.email)
+            setEmailContacto(paciente.emailcontacto)
+            setSintomas(paciente.sintomas)
+            setId(paciente._id)
+
+        }
+    },  [paciente])
     const handleSubmit = e => {
         e.preventDefault()
         //validar el formulario
@@ -24,6 +38,18 @@ const Formulario = () => {
         }
         setAlerta({})
         guardarPaciente({nombre, contacto, rut, email, emailcontacto, fecha, sintomas})
+        setAlerta({
+            msg:'modificación realizada'
+        })
+        setNombre ('')
+        setRut ('')
+        setContacto ('')
+        setEmail ('')
+        setEmailContacto ('')
+        setFecha ('')
+        setSintomas ('')
+        setId ('')
+
     }
     const {msg} =alerta
     return (
@@ -34,7 +60,7 @@ const Formulario = () => {
             </p>
             
             <form className="py-10 px-5 mb:10 lg:mb-0" onSubmit={handleSubmit}>
-                <div className="mb-5">
+                <div className="mb-5 ">
                     <label  className="text-gray-700 uppercase font-bold" htmlFor="usuario">Nombre</label>
                     <input 
                     type="text" 
@@ -104,7 +130,7 @@ const Formulario = () => {
                   {msg && <Alerta alerta={alerta}/> }
                 </div>
                 
-                <input className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 transition-colors cursor-pointer"  type="submit" value="agregar Paciente" />
+                <input className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 transition-colors cursor-pointer"  type="submit" value={id ? 'Guardar Cambios':"agregar Paciente"} />
             </form>
             
         </>

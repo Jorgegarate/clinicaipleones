@@ -25,9 +25,9 @@ const olvidePassword = () => {
   const {msg} = alerta
     return (
       <>
-          <section className="form-section">
-      <div className="auth-wrapper">
-        <h2 className="font-semibold">Olvidaste Contraseña</h2>
+        <section className="form-section p-3">
+        <div className="auth-wrapper form-login">
+        <h2 className="font-semibold color-title">Olvidaste Contraseña</h2>
         <form  className="flex flex-col" onSubmit={handleSubmit}>
 
           <div className="flex flex-col border my-4">
@@ -36,13 +36,13 @@ const olvidePassword = () => {
           </div>
           {msg && <Alerta alerta= {alerta}/>}
           <div className="flex flex-col border my-4">
-            <input type="submit"  value="Solicitar" className="bg-indigo-700 font-semibold py-3 text-white hover:cursor-pointer hover:bg-indigo-800" />
+            <input type="submit"  value="Solicitar" className="color-blue-new font-semibold py-3 text-white hover:cursor-pointer hover:color-blue-hover" />
           </div>
           
         </form>
-        <div className='flex-auto gap-4'>
-          <Link className="flex-none w-14 h-14" to="/">¿Ya tienes una cuenta? Iniciar Sesión</Link>
-          <Link className="flex-none w-14 h-14" to="/registrar">¿No tienes cuenta ?registrate</Link>
+        <div className='flex flex-col'>
+          <Link className="text-center" to="/">¿Ya tienes una cuenta? Iniciar Sesión</Link>
+          <Link className="text-center" to="/registrar">¿No tienes cuenta ?registrate</Link>
         </div>
        </div>
     </section>

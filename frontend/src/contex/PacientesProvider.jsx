@@ -5,6 +5,7 @@ const PacientesContext = createContext()
 export const PacientesProvider = ({children}) => {
 
     const [pacientes, setPacientes ] =useState([])
+    const [paciente, setPaciente] =useState({})
     
     useEffect(() => {
         const obtenerPacientes = async () => {
@@ -17,8 +18,10 @@ export const PacientesProvider = ({children}) => {
                         Authorization: `Bearer ${token}`
                     }
                 }
-                const {data} = await clienteAxios.get('/paciente', config)
-                setPacientes= data
+                const {data} = await clienteAxios.get('/paciente', config);
+                console.log("info", data)
+                setPacientes(data)
+
             } catch (error) {
                 console.log(error)
             }
@@ -27,26 +30,65 @@ export const PacientesProvider = ({children}) => {
     }, [])
 
     const guardarPaciente = async (paciente) => {
-        try {
-            const token = localStorage.getItem('token')
-            const config = {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                }
+        if (paciente.id) {
+            try {
+                const { data} = await clienteAxios.put(`/paciente/${paciente.id}`, paciente, config)
+                const pacientesActualizado = paciente.map(pacienteState => pacienteState._id === data._id ? data : pacienteState)
+                setPacientes(pacientesActualizado)
+            } catch (error) {
+                console.log(error)
             }
-            const {data} = await clienteAxios.post('/paciente', paciente, config)
-                const {createdAt, updatedAt, __v, ...pacienteAlmacenado }= data
-                setPacientes([pacienteAlmacenado, ...pacientes])
-        } catch (error) {
-            console.log( error.response.data.msg)
+        } else {
+            try {
+                const token = localStorage.getItem('token')
+                const config = {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+                const {data} = await clienteAxios.post('/paciente', paciente, config)
+                    const {createdAt, updatedAt, __v, ...pacienteAlmacenado }= data
+                    setPacientes([pacienteAlmacenado, ...pacientes])
+            } catch (error) {
+                console.log( error.response.data.msg)
+            }
+        }
+
+    }
+    const setEdicion = (paciente) => {
+        setPaciente(paciente)
+    }
+    const eliminarPaciente = async id => {
+        const confirmar = confirm('confirmas que deseas eliminar?')
+        console.log(confirmar)
+        if(confirmar) {
+            try {
+                const token = localStorage.getItem('token')
+                if(!token) return
+                const config = {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+                const {data} = await clienteAxios.delete(`/paciente/${id}`, config)
+                const pacientesActualizado = pacientes.filter( pacientesState => pacientesState._id !==id)
+                setPacientes(pacientesActualizado)
+            } catch (error) {
+                console.log(error)
+            }
         }
     }
+
     return (
         <PacientesContext.Provider
         value= {{
             pacientes,
-            guardarPaciente
+            guardarPaciente,
+            setEdicion,
+            paciente,
+            eliminarPaciente
 
         }}
         >

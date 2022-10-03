@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import conectarDB from "./config/db.js";
 import medicoRoutes from "./routs/medicoRoutes.js";
 import pacienteRoutes from "./routs/pacienteRoutes.js";
-
+//
 const app = express();
 app.use(express.json());
 dotenv.config();

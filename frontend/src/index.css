@@ -2,11 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width:760px) {
+@media (max-width:760px) {
+    .form-login {
+        background: white;
+        position: absolute;
+        z-index: 9999;
+        top: 220px;
+        border-radius: 10px;
+        padding: 30px;
+    }
+}
+
+
+@media (min-width:160px) {
+
+
     .fondo {
-        height: 100vh;
+        height: 35vh;
         width: 100%;
-        background-image: url(../src/img/bg-01.png);
+        background: linear-gradient(5deg, #10b3e0fc, #1e5cb9c0),url(../src/img/bg-fondo.jpg);
         background-size: cover;
         display: flex;
         align-items: center;
@@ -14,6 +28,12 @@
         padding: 30px 15px;
         position: relative;
         z-index: 1;
+    }
+    
+}
+@media (min-width:760px) {
+    .fondo {
+        height: 100vh;
     }
     
 }
@@ -102,7 +122,12 @@ ion-icon {
     display: inline;
 }
 .logo .img {
-    height: 100%;
+    height: 100%!important;
+  }
+  @media (min-width:100px) and (max-width:759px) {
+    .img {
+        height: 110px!important;
+      }
   }
 
 .logito {
@@ -126,4 +151,36 @@ ion-icon {
 .margin-new {
     margin-top: 2px;
     padding-left: 4px;
+}
+.color {
+    margin-left: 10px;
+    color:#10B5D6;
+}
+.input-not, .label-not {
+    background: #f0f3fb!important;
+}
+.color-title {
+    color:#017BFF;
+}
+.color-blue-new {
+    border-radius: 8px;
+    background-color:#017BFF;
+}
+.color-blue-new:hover {
+    background-color:#0a6dd7;
+}
+
+
+.azul-degrade{
+    background-color: aqua;
+}
+.azul-degrades{
+    background-color:#017BFF;
+}
+.imgsimbolo {
+    height: 30px;
+    margin-left: 5px;
+}
+.center-text a{
+    margin: auto;
 }
