@@ -18,7 +18,7 @@ const Dashboard = () => {
             <div className=" container-new header mx-auto flex justify-between items-center ">
                 <div className="logo w-full md:w-auto flex justify-between items-center">
                 <img src={`${Logo}`} className="img " />
-                <h1 className={isSignUp ? " logito font-bold uppercase text-3xl color  invisible md:visible" : "logo-none "}>CPG</h1>
+                <h1 className={isSignUp ? " logito font-bold uppercase text-3xl color  invisible md:visible" : "logo-none "}>CPMG</h1>
                 <button className="flex justify-between" onClick={() =>isSignUp? setSignUp(false): setSignUp(true)}>
                 <ion-icon size="large" name="menu-outline"></ion-icon>
                 </button>
