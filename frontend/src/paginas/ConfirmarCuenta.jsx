@@ -36,7 +36,7 @@ const ConfirmarCuenta = () => {
         <div className="auth-wrapper form-login text-center">
            <h2 className="font-semibold color-title">confirma tu cuenta y administrar tu paciente</h2>
           {!cargando && <Alerta  className="my-5"alerta={alerta}/>}
-          {cuentaConfirmada && <Link className="color-blue-new font-semibold p-4 text-white hover:cursor-pointer hover:color-blue-hover" to="/">Iniciar Sesión</Link>}
+          {cuentaConfirmada && <Link className=" color-blue-new font-semibold p-4 text-white hover:cursor-pointer hover:color-blue-hover my-5" to="/">Iniciar Sesión</Link>}
         </div>
       </section>
       </>

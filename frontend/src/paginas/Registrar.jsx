@@ -45,20 +45,20 @@ const registrar = () => {
                   <form  className="flex flex-col" onSubmit={handleSumit}>
 
                     <div className="flex flex-col border my-4">
-                      <label htmlFor="">Nombre</label>
-                      <input type="text"  placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)}/>
+                      <label className="label-not" htmlFor="">Nombre</label>
+                      <input className="input-not" type="text"  placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)}/>
                     </div>
                     <div className="flex flex-col border my-4">
-                      <label htmlFor="">Email</label>
-                      <input type="email"  placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+                      <label className="label-not" htmlFor="">Email</label>
+                      <input className="input-not" type="email"  placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     <div className="flex flex-col border my-4">
-                      <label htmlFor="">Password</label>
-                      <input type="password"  placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+                      <label className="label-not" htmlFor="">Contraseña</label>
+                      <input className="input-not" type="password"  placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
                     <div className="flex flex-col border my-4">
-                      <label htmlFor="">Password</label>
-                      <input type="password"  placeholder="Repite tu Password" value={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
+                      <label className="label-not" htmlFor="">Repetir Contraseña</label>
+                      <input className="input-not" type="password"  placeholder="Repite tu Password" value={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
                     </div>
                     
                     <div className="py-3">

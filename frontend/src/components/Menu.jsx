@@ -9,9 +9,9 @@ const Menu = (props) => {
             <li>hola</li>
             <li>este</li>
             <li>chao</li>
-            <li><button type="button flex items-center" onClick={cerrarSesion}>
+            <li><button className=" flex items-center" type="button" onClick={cerrarSesion}>
             <ion-icon name="exit-outline" size="small"></ion-icon>
-                Salir
+                <p>Salir</p>
                 
                 </button></li>
         </ul>

@@ -64,7 +64,7 @@ const logins = () => {
             {/*alerta */}
           {msg && <Alerta alerta= {alerta}/>} 
           </div>
-          <div className="flex flex-col border my-4">
+          <div className="flex flex-col my-4">
             <input type="submit"  value="Iniciar Sesión" className="color-blue-new font-semibold py-3 text-white hover:cursor-pointer hover:color-blue-hover" />
           </div>
           

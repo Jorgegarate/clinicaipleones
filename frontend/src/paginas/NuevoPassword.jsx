@@ -67,19 +67,20 @@ const NuevoPassword = () => {
 
   return (
     <>
-    <div>
-      <h1>Restablece tu contraseña y no Pierdas tu cuenta</h1>
+    <section className="form-section p-3">
+        <div className="auth-wrapper form-login">
+        <h2 className="font-semibold color-title">Restablece tu contraseña y no Pierdas tu cuenta</h2>
       {msg && <Alerta alerta={alerta}/>}
       {tokenValido &&(
         <>
                       <form onSubmit={handleSubmit} >
               <div className="flex flex-col border my-4">
-                <label htmlFor="">Password</label>
-                <input type="password"  placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+                <label className="label-not" htmlFor="">Contraseña</label>
+                <input className="input-not" type="password"  placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
               </div>
               <div className="flex flex-col border my-4">
-                <label htmlFor="">Password</label>
-                <input type="password"  placeholder="Repite tu Password" value={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
+                <label className="label-not" htmlFor="">Repetir Contraseña</label>
+                <input className="input-not" type="password"  placeholder="Repite tu Password" value={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
               </div>
               
               <div className="py-3">
@@ -87,17 +88,18 @@ const NuevoPassword = () => {
                           
                             
               </div>
-              <div className="flex flex-col border my-4">
-                            <input type="submit"  value="Registrarse" className="bg-indigo-700 font-semibold py-3 text-white hover:cursor-pointer hover:bg-indigo-800" />
+              <div className="flex flex-col my-4">
+                            <input type="submit"  value="Registrarse" className=" color-blue-new font-semibold p-4 text-white hover:cursor-pointer hover:color-blue-hover my-5" />
               </div>
             </form>
 
         </>
 
       )}
-      {passwordModificado && <Link className="flex-none w-14 h-14" to="/">Iniciar Sesión</Link>}
+      {passwordModificado && <Link className="flex-none w-14 h-14" to="/">Volver al Inicio</Link>}
 
-    </div>
+      </div>
+    </section>
     </>
 
   )

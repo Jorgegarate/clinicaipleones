@@ -31,12 +31,12 @@ const olvidePassword = () => {
         <form  className="flex flex-col" onSubmit={handleSubmit}>
 
           <div className="flex flex-col border my-4">
-            <label htmlFor="">Correo</label>
-            <input type="email"  value={email} onChange={e=> setEmail(e.target.value)} placeholder="Correo"/>
+            <label className="label-not" htmlFor="">Correo</label>
+            <input className="input-not" type="email"  value={email} onChange={e=> setEmail(e.target.value)} placeholder="Correo"/>
           </div>
           {msg && <Alerta alerta= {alerta}/>}
-          <div className="flex flex-col border my-4">
-            <input type="submit"  value="Solicitar" className="color-blue-new font-semibold py-3 text-white hover:cursor-pointer hover:color-blue-hover" />
+          <div className="flex flex-col my-4">
+            <input type="submit"  value="Solicitar" className=" color-blue-new font-semibold p-4 text-white hover:cursor-pointer hover:color-blue-hover m-5" />
           </div>
           
         </form>

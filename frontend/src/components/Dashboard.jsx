@@ -8,7 +8,7 @@ const Dashboard = () => {
 
     const nombre = localStorage.getItem('nombre')
     console.log("nombre user", nombre)
-    const [isSignUp, setSignUp] = useState(true);
+    const [isSignUp, setSignUp] = useState(false);
 
     
     return (
@@ -35,7 +35,7 @@ const Dashboard = () => {
         </header>
         
         <Menu className={isSignUp ? "sidebar" : "side-closed sidebar"}/>
-        <Main className="section"/>
+        <Main className={isSignUp ? "section closed" : "section"}/>
         </>
 
     )

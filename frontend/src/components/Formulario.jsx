@@ -54,14 +54,14 @@ const Formulario = () => {
     const {msg} =alerta
     return (
         <>
-            <p className="text-lg text-center mb-10">
+            <p className="text-3xl text-center">
                 Añade los pacientes y {''}
-                <span className="text-indigo-600 font-bold"> Administralos</span>
+                <span className="color-title font-bold"> Administralos</span>
             </p>
             
             <form className="py-10 px-5 mb:10 lg:mb-0" onSubmit={handleSubmit}>
-                <div className="mb-5 ">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="usuario">Nombre</label>
+                <div className="mb-2 ">
+                    <label  className="color-title uppercase font-bold" htmlFor="usuario">Nombre</label>
                     <input 
                     type="text" 
                     id="nombre" placeholder="nombre" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
@@ -70,7 +70,7 @@ const Formulario = () => {
 
                 </div>
                 <div className="mb-5">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="rut">Rut</label>
+                    <label  className="color-title uppercase font-bold" htmlFor="rut">Rut</label>
                     <input 
                     type="number" 
                     id="nombre" placeholder="nombre" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
@@ -79,14 +79,14 @@ const Formulario = () => {
 
                 </div>
                 <div className="mb-5">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="email">Email</label>
+                    <label  className="color-title uppercase font-bold" htmlFor="email">Email</label>
                     <input type="email" id="email" placeholder="Email" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
                     value={email} 
                     onChange={e => setEmail(e.target.value)}  />
 
                 </div>
                 <div className="mb-5">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="contacto">Contato Emergencia</label>
+                    <label  className="color-title uppercase font-bold" htmlFor="contacto">Contato Emergencia</label>
                     <input 
                     type="text" 
                     id="contacto" placeholder="Nombre" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
@@ -95,14 +95,14 @@ const Formulario = () => {
 
                 </div>
                 <div className="mb-5">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="emailcontacto">Email Emergencia</label>
+                    <label  className="color-title uppercase font-bold" htmlFor="emailcontacto">Email Emergencia</label>
                     <input type="emailcontacto" id="emailcontacto" placeholder="Email Emergencia" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
                     value={emailcontacto} 
                     onChange={e => setEmailContacto(e.target.value)}  />
 
                 </div>
                 <div className="mb-5">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="fecha">Fecha</label>
+                    <label  className="color-title uppercase font-bold" htmlFor="fecha">Fecha</label>
                     <input type="date" id="fecha" placeholder="Solicitud" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
                     value={fecha} 
                     onChange={e => setFecha(e.target.value)}  />
@@ -120,7 +120,7 @@ const Formulario = () => {
                 </div> */}
                 
                 <div className="mb-5">
-                    <label  className="text-gray-700 uppercase font-bold" htmlFor="alta">Sintomas</label>
+                    <label  className="color-title uppercase font-bold" htmlFor="alta">Sintomas</label>
                     <textarea placeholder=" Describe los Sintomas" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
                     value={sintomas} 
                     onChange={e => setSintomas(e.target.value)}   />
@@ -130,7 +130,7 @@ const Formulario = () => {
                   {msg && <Alerta alerta={alerta}/> }
                 </div>
                 
-                <input className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 transition-colors cursor-pointer"  type="submit" value={id ? 'Guardar Cambios':"agregar Paciente"} />
+                <input className="color-blue-new font-semibold py-3 text-white hover:cursor-pointer hover:color-blue-hover uppercase w-full"  type="submit" value={id ? 'Guardar Cambios':"agregar Paciente"} />
             </form>
             
         </>
