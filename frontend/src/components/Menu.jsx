@@ -5,11 +5,15 @@ const Menu = (props) => {
     return(
     <>
     <nav className={props.className}>
-        <ul>
+        <ul className='li'>
             <li>hola</li>
             <li>este</li>
             <li>chao</li>
-            <li><button type="button" onClick={cerrarSesion}>cerrar sesión</button></li>
+            <li><button type="button flex items-center" onClick={cerrarSesion}>
+            <ion-icon name="exit-outline" size="small"></ion-icon>
+                Salir
+                
+                </button></li>
         </ul>
     </nav>
     </>
