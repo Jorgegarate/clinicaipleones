@@ -30,7 +30,7 @@ const Formulario = () => {
     const handleSubmit = e => {
         e.preventDefault()
         //validar el formulario
-        if ([nombre, rut, contacto, email, emailcontacto, fecha,hora, sintomas].includes('')) {
+        if ([nombre, rut, contacto, email, emailcontacto, fecha, hora, sintomas].includes('')) {
             setAlerta({
                 msg:'Todos los campos son obligatorio',
                 error:true
@@ -49,6 +49,7 @@ const Formulario = () => {
         setEmail ('')
         setEmailContacto ('')
         setFecha ('')
+        setHora ('')
         setSintomas ('')
         setId ('')
 

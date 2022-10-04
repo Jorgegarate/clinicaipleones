@@ -47,6 +47,7 @@ const actualizarPaciente = async (req, res) =>{
   //Datos para cambiar fecha de registro
  paciente.nombre= req.body.nombre || paciente.nombre;
  paciente.contacto= req.body.contacto || paciente.contacto;
+ paciente.rut= req.body.rut || paciente.rut;
  paciente.fecha= req.body.fecha || paciente.fecha;
  paciente.hora= req.body.hora || paciente.hora;
  paciente.email= req.body.email || paciente.email;
