@@ -9,7 +9,7 @@ const {email, nombre} =req.body;
 
     const existeUsuario = await Medico.findOne({email})
     if (existeUsuario) {
-        const error = new Error("Usuario ya registrado- desde backend");
+        const error = new Error("Usuario ya registrado");
         return res.status(400).json({msg: error.message });
     }
     try {
@@ -77,7 +77,7 @@ const autenticar = async (req, res) => {
         } );
 
     } else {
-        const error = new Error('password incorrecto');
+        const error = new Error('Contraseña incorrecto');
         return res.status(403).json({msg: error.message });
     }
 };

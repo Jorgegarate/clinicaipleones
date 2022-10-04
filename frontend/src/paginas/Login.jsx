@@ -45,19 +45,17 @@ const logins = () => {
       <div className="auth-wrapper form-login">
         <h2 className="font-semibold color-title"> Bienvenidos </h2>
         <p>
-          <Link to="/registrar">No tienes Cuenta? Registrar</Link>
+          <Link className="color-title" to="/registrar">Crear Nuevo Administrador</Link>
         </p>
-        <h2 className="font-bold">Iniciar sesión</h2>
+        <h2 className="font-bold">Iniciar Sesión</h2>
         <form  className="flex flex-col" onSubmit={handleSubmit}>
 
           <div className="flex flex-col border my-4">
-            <label className='label-not' htmlFor="">Correo</label>
             <input className='input-not' type="email"  placeholder="Correo" value={email} onChange={e => setEmail(e.target.value)}/>
           </div>
 
 
           <div className="flex flex-col border my-4">
-            <label className="label-not" htmlFor="">Contraseña</label>
             <input className='input-not' type="password"  placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} />
           </div>
           <div>
@@ -69,7 +67,7 @@ const logins = () => {
           </div>
           
         </form>
-        <p className=''><Link to="/olvidepassword">Olvidaste la contraseña</Link></p>
+        <p className='color-title'><Link to="/olvidepassword">¿Olvidaste la contraseña?</Link></p>
       </div>
     </section>
 

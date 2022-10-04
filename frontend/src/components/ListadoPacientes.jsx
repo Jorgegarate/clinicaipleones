@@ -9,7 +9,7 @@ const ListadoPacientes = () => {
             (
                 <>
                 <h2 className='font-bold text-3xl color-title'>
-                    Tienes un total de {`${pacientes.length}`} pacientes por atender
+                    Pacientes por atender {`${pacientes.length}`} 
                 </h2>
                 <p className='text-xl mt-5 mb-10'>
                     Estas realizando un  {' '}

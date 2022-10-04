@@ -113,9 +113,9 @@ const Formulario = () => {
                 </div>
                 <div className="mb-5">
                     <label  className="color-title uppercase font-bold" htmlFor="alta">Hora</label>
-                    <select className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" value={fecha} onChange={e => setHora(e.target.value)}>
+                    <select className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" value={hora} onChange={e => setHora(e.target.value)}>
+                        
                         <option value="10:00">10:00</option>
-                        <option value="11:00">11:00</option>
                         <option value="12:00">12:00</option>
                         <option value="13:00">13:00</option>
                     </select>

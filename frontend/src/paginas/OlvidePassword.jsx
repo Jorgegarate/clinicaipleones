@@ -31,7 +31,6 @@ const olvidePassword = () => {
         <form  className="flex flex-col" onSubmit={handleSubmit}>
 
           <div className="flex flex-col border my-4">
-            <label className="label-not" htmlFor="">Correo</label>
             <input className="input-not" type="email"  value={email} onChange={e=> setEmail(e.target.value)} placeholder="Correo"/>
           </div>
           {msg && <Alerta alerta= {alerta}/>}
@@ -41,8 +40,8 @@ const olvidePassword = () => {
           
         </form>
         <div className='flex flex-col'>
-          <Link className="text-center" to="/">¿Ya tienes una cuenta? Iniciar Sesión</Link>
-          <Link className="text-center" to="/registrar">¿No tienes cuenta? Registrate</Link>
+          <Link className="text-center color-title" to="/">¿Ya tienes una cuenta? Iniciar Sesión</Link>
+          <Link className="text-center color-title" to="/registrar">¿No tienes cuenta? Regístrate</Link>
         </div>
        </div>
     </section>

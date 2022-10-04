@@ -75,11 +75,9 @@ const NuevoPassword = () => {
         <>
                       <form onSubmit={handleSubmit} >
               <div className="flex flex-col border my-4">
-                <label className="label-not" htmlFor="">Contraseña</label>
                 <input className="input-not" type="password"  placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} />
               </div>
               <div className="flex flex-col border my-4">
-                <label className="label-not" htmlFor="">Repetir Contraseña</label>
                 <input className="input-not" type="password"  placeholder="Repite tu Contraseña" value={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
               </div>
               

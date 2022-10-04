@@ -51,8 +51,8 @@ const Paciente = ({paciente}) => {
             </p>
             <div className="flex justify-between my-5">
                 <button type="button" className="color-blue-new font-semibold py-3 text-white hover:cursor-pointer hover:color-blue-hover uppercase p-3 px-4 rounded-md flex items-center" 
-                onClick={() => setEdicion(paciente)}>Reagendar</button>
-                <button type="button" className="py-2 px-4 md:px-10 bg-red-600 hover:bg-red-800 text-white uppercase font-bold rounded-lg" onClick={() => eliminarPaciente(_id)}>Finalizar</button>
+                onClick={() => setEdicion(paciente)}>Modificar</button>
+                <button type="button" className="py-2 px-4 md:px-10 bg-red-600 hover:bg-red-800 text-white uppercase font-bold rounded-lg" onClick={() => eliminarPaciente(_id)}>Eliminar</button>
 
             </div>
         </div>

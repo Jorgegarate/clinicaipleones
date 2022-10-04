@@ -40,24 +40,20 @@ const registrar = () => {
       <>
         <section className="form-section p-3">
                 <div className="auth-wrapper form-login">
-                  <h2 className="font-semibold color-title"> Crea tu cuenta y Administra tus Pacientes </h2>
+                  <h2 className="font-semibold color-title"> Crea tu cuenta y Administra los Pacientes </h2>
                   
                   <form  className="flex flex-col" onSubmit={handleSumit}>
 
                     <div className="flex flex-col border my-4">
-                      <label className="label-not" htmlFor="">Nombre</label>
                       <input className="input-not" type="text"  placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)}/>
                     </div>
                     <div className="flex flex-col border my-4">
-                      <label className="label-not" htmlFor="">Email</label>
                       <input className="input-not" type="email"  placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     <div className="flex flex-col border my-4">
-                      <label className="label-not" htmlFor="">Contraseña</label>
                       <input className="input-not" type="password"  placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
                     <div className="flex flex-col border my-4">
-                      <label className="label-not" htmlFor="">Repetir Contraseña</label>
                       <input className="input-not" type="password"  placeholder="Repite tu Password" value={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
                     </div>
                     
@@ -71,7 +67,7 @@ const registrar = () => {
                     </div>
                     
                   </form>
-                  <p className='text-center'><Link to="/">Ya tienes Cuenta?</Link></p>
+                  <p className='text-center color-title'><Link to="/">¿Ya tienes Cuenta? Volver</Link></p>
                 </div>
         </section>
   
