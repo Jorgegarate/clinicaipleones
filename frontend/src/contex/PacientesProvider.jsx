@@ -30,10 +30,19 @@ export const PacientesProvider = ({children}) => {
     }, [])
 
     const guardarPaciente = async (paciente) => {
+        console.log("este es el paciente",paciente)
+        const token = localStorage.getItem('token')
+        console.log("este es el token",token)
+                const config = {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`
+                    }
+                }
         if (paciente.id) {
             try {
                 const { data} = await clienteAxios.put(`/paciente/${paciente.id}`, paciente, config)
-                const pacientesActualizado = paciente.map(pacienteState => pacienteState._id === data._id ? data : pacienteState)
+                const pacientesActualizado = pacientes.map(pacienteState => pacienteState._id === data._id ? data : pacienteState)
                 setPacientes(pacientesActualizado)
             } catch (error) {
                 console.log(error)

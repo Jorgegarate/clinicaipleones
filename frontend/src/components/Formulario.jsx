@@ -39,7 +39,7 @@ const Formulario = () => {
 
         }
         setAlerta({})
-        guardarPaciente({nombre, contacto, rut, email, emailcontacto, fecha, hora, sintomas})
+        guardarPaciente({nombre, contacto, rut, email, emailcontacto, fecha, hora, sintomas, id})
         setAlerta({
             msg:'modificación realizada'
         })
