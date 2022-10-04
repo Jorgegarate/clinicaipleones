@@ -6,9 +6,9 @@ const Menu = (props) => {
     <>
     <nav className={props.className}>
         <ul className='li'>
-            <li>hola</li>
-            <li>este</li>
-            <li>chao</li>
+            <li className='flex items-center'><ion-icon name="happy-outline" size="small"></ion-icon> Nuevo</li>
+            <li className='flex items-center'><ion-icon name="receipt-outline" size="small"></ion-icon> Agendar</li>
+            <li className='flex items-center'><ion-icon name="settings-outline" size="small"></ion-icon> Modificar</li>
             <li><button className=" flex items-center" type="button" onClick={cerrarSesion}>
             <ion-icon name="exit-outline" size="small"></ion-icon>
                 <p>Salir</p>

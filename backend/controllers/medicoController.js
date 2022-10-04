@@ -127,7 +127,7 @@ const nuevoPassword = async(req, res) => {
         medico.token= null;
         medico.password= password;
         await medico.save();
-        res.json({msg:"Password modificacion correctamente"});
+        res.json({msg:"Contraseña modificada correctamente"});
         console.log(medico);
     } catch (error) {
         console.log(error);

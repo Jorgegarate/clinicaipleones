@@ -18,7 +18,7 @@ const info = await transporte.sendMail({
     subject: " Restablece tu contraseña",
     text: 'Restablece tu contraseña',
     html:`
-    <p>Hola: ${nombre}, has solicitado reestablecer tu contraseña </p>
+    <p>Hola ${nombre}, has solicitado restablecer tu contraseña </p>
     <p>Enlace para restablecer contraseña:</p> 
     <a href="${process.env.FRONTEND_URL}/olvidepassword/${token}">Comprobar cuenta </a> 
     <p>Si no creaste esta cuenta, favor realizar caso omiso de este mensaje</p>

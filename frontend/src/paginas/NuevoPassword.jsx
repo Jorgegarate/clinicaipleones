@@ -69,18 +69,18 @@ const NuevoPassword = () => {
     <>
     <section className="form-section p-3">
         <div className="auth-wrapper form-login">
-        <h2 className="font-semibold color-title">Restablece tu contraseña y no Pierdas tu cuenta</h2>
+        <h2 className="font-semibold color-title">Restablece tu contraseña y no pierdas tu cuenta</h2>
       {msg && <Alerta alerta={alerta}/>}
       {tokenValido &&(
         <>
                       <form onSubmit={handleSubmit} >
               <div className="flex flex-col border my-4">
                 <label className="label-not" htmlFor="">Contraseña</label>
-                <input className="input-not" type="password"  placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+                <input className="input-not" type="password"  placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} />
               </div>
               <div className="flex flex-col border my-4">
                 <label className="label-not" htmlFor="">Repetir Contraseña</label>
-                <input className="input-not" type="password"  placeholder="Repite tu Password" value={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
+                <input className="input-not" type="password"  placeholder="Repite tu Contraseña" value={repetirPassword} onChange={e => setRepetirPassword(e.target.value)} />
               </div>
               
               <div className="py-3">
@@ -89,7 +89,7 @@ const NuevoPassword = () => {
                             
               </div>
               <div className="flex flex-col my-4">
-                            <input type="submit"  value="Registrarse" className=" color-blue-new font-semibold p-4 text-white hover:cursor-pointer hover:color-blue-hover my-5" />
+                            <input type="submit"  value="Restablecer" className=" color-blue-new font-semibold p-4 text-white hover:cursor-pointer hover:color-blue-hover my-5" />
               </div>
             </form>
 

@@ -42,7 +42,7 @@ const olvidePassword = () => {
         </form>
         <div className='flex flex-col'>
           <Link className="text-center" to="/">¿Ya tienes una cuenta? Iniciar Sesión</Link>
-          <Link className="text-center" to="/registrar">¿No tienes cuenta ?registrate</Link>
+          <Link className="text-center" to="/registrar">¿No tienes cuenta? Registrate</Link>
         </div>
        </div>
     </section>
